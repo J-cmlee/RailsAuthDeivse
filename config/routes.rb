@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   get 'pages/info'
   root to: redirect('/ideas')
   resources :ideas
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth' }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
